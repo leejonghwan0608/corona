@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% block title%}KIT{% endblock %}
+
+{% block content %}
+<!-- Masthead-->
+<header class="masthead" id="main">
+    <div class="container">
+        <div class="masthead-subheading">21990016 이종환</div>
+        
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#portfolio">전국 현황 보러가기</a>
+    </div>
+</header>
+<!-- 전국 현황 -->
+<section class="page-section bg-light" id="portfolio">
+    <div class="container" id="nation">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">전국 현황</h2>
+            <h3 class="section-subheading text-muted">국내 전국 단위 코로나19 현황 분석</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#kor_defCnt_map">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="../static//img/portfolio/kor_defCnt_thumbnail.png" alt="" />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">국내 확진자 현황</div>
+                        <div class="portfolio-caption-subheading text-muted">국내 지역별 확진자 수</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#kor_isolClearCnt_map">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="../static/img/portfolio/kor_isolClearCnt_thumbnail.png" alt="" />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">국내 완치자 현황</div>
+                        <div class="portfolio-caption-subheading text-muted">국내 지역별 완치자 수</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#kor_deathCnt_map">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="../static/img/portfolio/kor_deathCnt_thumbnail.png" alt="" />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">국내 사망자 현황</div>
+                        <div class="portfolio-caption-subheading text-muted">국내 지역별 사망자 수</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#region">시도별 현황 보러가기</a>
+    </div>
+    
+</section>
+
+<!-- 시도별 발생현황 -->
+<section class="page-section">
+    <div class="container" id="region">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">시도별 현황</h2>
+            <h3 class="section-subheading text-muted">국내 시도별 코로나19 확진자 발생현황</h3>
+        </div>
+        <iframe src="cities_trend_chart" width="100%" height="1230" scrolling="no" frameborder="0"></iframe>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#hospital_map">선별 진료소 지도 보러가기</a>
+    </div>
+
+</section>
+
+<!-- 선별진료소 지도 -->
+<section class="page-section" id="hospital_map">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">선별진료소 현황 Map</h2>
+            <h3 class="section-subheading text-muted">현재 선별진료소 현황을 나타내는 지도</h3>
+        </div>
+        <div>
+            <iframe src="hospital_map" width="100%" height="700px" frameborder="0"></iframe>
+        </div>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#main">처음으로 돌아가기</a>
+    </div>
+    
+</section>
+
+
+<!-- kor_defCnt_map -->
+<div class="portfolio-modal modal fade" id="kor_defCnt_map" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal"><img src="../static/img/close-icon.svg" alt="Close modal" />
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here-->
+                            <h2 class="text-uppercase">국내 확진자 현황</h2>
+                            <p class="item-intro text-muted">국내 지역별 확진자 수</p>
+                            <iframe src="kor_defCnt_map" width="100%" height="700px" frameborder="0"></iframe>
+                            
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <i class="fas fa-times mr-1"></i>
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- kor_isolClearCnt_map -->
+<div class="portfolio-modal modal fade" id="kor_isolClearCnt_map" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal"><img src="../static/img/close-icon.svg" alt="Close modal" />
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here-->
+                            <h2 class="text-uppercase">국내 완치자 현황</h2>
+                            <p class="item-intro text-muted">국내 지역별 완치자 수</p>
+                            <iframe src="kor_isolClearCnt_map" width="100%" height="700px" frameborder="0"></iframe>
+                         
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <i class="fas fa-times mr-1"></i>
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- kor_deathCnt_map -->
+<div class="portfolio-modal modal fade" id="kor_deathCnt_map" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal"><img src="../static/img/close-icon.svg" alt="Close modal" />
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here-->
+                            <h2 class="text-uppercase">국내 사망자 현황</h2>
+                            <p class="item-intro text-muted">국내 지역별 사망자 수</p>
+                            <iframe src="kor_deathCnt_map" width="100%" height="700px" frameborder="0"></iframe>
+                            
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <i class="fas fa-times mr-1"></i>
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
